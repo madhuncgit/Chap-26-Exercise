@@ -4,8 +4,16 @@
       <title>Fetch Planets</title>
       <script>
          window.addEventListener("load", function(){
+             fetch("https://handlers.education.launchcode.org/static/planets.json").then (function(response){
+       response.json().then(function(json) {
+      console.log(json);
+             });
             // TODO: fetch planets JSON
          });
+         const destination = document.getElementById("destination");
+   destination.innerHTML = `<h3>Planet ${json[0].name}</h3>`;
+        });
+        
       </script>
    </head>
    <body>
